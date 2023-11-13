@@ -1,0 +1,116 @@
+﻿<Window x:Class="HospitalExe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalExe"
+        mc:Ignorable="d"
+        Title="Risk" Height="1600" Width="940">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="350"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" FontSize="30" HorizontalContentAlignment="Center">Расчёт факторов риска ВТЭО:</Label>
+            <StackPanel Grid.Row="1">
+                <TextBlock TextWrapping="Wrap"  FontSize="20">Предсуществующие факторы риска</TextBlock>
+                <CheckBox Name="factorOneOne" FontSize="15" Checked="factorOneOne_Checked">Предшествующее ВТЭО (за исключением однократного эпизода, связанного с большим хирургическим вмешательством)</CheckBox>
+                <CheckBox Name="factorOneTwo" FontSize="15" Checked="factorOneTwo_Checked">Предшествующее ВТЭО, спровоцированное большим хирургическим вмешательством</CheckBox>
+                <CheckBox Name="factorOneThree" FontSize="15" Checked="factorOneThree_Checked">Подтвержденное наличие тромбофилии высокого риска</CheckBox>
+                <Expander Header="">
+                    <StackPanel Margin="5">
+                        <CheckBox Name="factroOneThreeOne" Checked="factorOneThreeFound">Антифосфолипидный синдром (АФС)</CheckBox>
+                        <CheckBox Name="factorOneThreeTwo" Checked="factorOneThreeFound">Гомозиготная мутация гена фактора V (мутация Лейден F5 G1691A) или rs 6025
+(далее – мутация F5)</CheckBox>
+                        <CheckBox Name="factorOneThreeThree" Checked="factorOneThreeFound">Гомозиготная мутация гена фактора II (протромбина) F2 G20210А или rs 179996 (далее – мутация F2)</CheckBox>
+                        <CheckBox Name="factorOneThreeFour" Checked="factorOneThreeFound">сочетание гетерозиготных</CheckBox>
+                    </StackPanel>
+                </Expander>
+                <CheckBox Name="factorOneFour" FontSize="15" Checked="factorOneFour_Checked">Сопутствующие заболевания</CheckBox>
+                <Expander Header="">
+                    <StackPanel Margin="5">
+                        <CheckBox Name="factorOneFourOne" Checked="factorOneFourFound">Онкологические заболевания</CheckBox>
+                        <CheckBox Name="factorOneFourTwo" Checked="factorOneFourFound">Паркасизмальная ночная гемоглобинурия></CheckBox>
+                        <CheckBox Name = "factorOneFourThree" Checked="factorOneFourFound">Сердечная недостаточность</CheckBox>
+                        <CheckBox Name="factorOneFourFour" Checked="factorOneFourFound">Активная системная красная волчанка</CheckBox>
+                        <CheckBox Name="factorOneFourFive" Checked="factorOneFourFound">Восполительная полиартропия</CheckBox>
+                    </StackPanel>
+                </Expander>
+                <CheckBox Name="factorOneFive" FontSize="15" Checked="factorOneFive_Checked">Семейный анамнез неспровоцированной или связанное с воздействием эстрогена ВТЭО
+у родственника первой степени родства</CheckBox>
+                <CheckBox Name="factorOneSix" FontSize="15" Checked="factorOneSix_Checked">Известная тромбофилия низкого риска (без ВТЭО)</CheckBox>
+                <Expander Header="">
+                    <StackPanel Margin="5">
+                        <CheckBox Name="factorOneSixOne" Checked="factorOneSixFound">Гетерозиготная мутация гена фактора V (мутация Лейден F5 G1691A)</CheckBox>
+                        <CheckBox Name="factorOneSixTwo" Checked="factorOneSixFound">Гетерозиготная мутация гена фактора II (протпромбина) F2 G20210A</CheckBox>
+                    </StackPanel>
+                </Expander>
+                <CheckBox Name="factorOneSeven" FontSize="15" Checked="factorOneSeven_Checked">Возраст(>35 лет)</CheckBox>
+                <Label Name="factorOneEight" FontSize="15">Ожирение:</Label>
+                <CheckBox Name="factorOneEightOne" Checked="factorOneEightOne_Checked">ИМТ >= 30 = 1</CheckBox>
+                <CheckBox Name="factorOneEightTwo" Checked="factorOneEightTwo_Checked">ИМТ >=40 = 2</CheckBox>
+                <CheckBox Name="factorOneNine" FontSize="15" Checked="factorOneNine_Checked">>= 3 родов</CheckBox>
+                <CheckBox Name ="factorOneTen" FontSize="15" Checked="factorOneTen_Checked">Курение</CheckBox>
+                <CheckBox Name="factorOneEleven" FontSize="15" Checked="factorOneEleven_Checked">Варикозное расширение вен нижних конечностей тяжелой степени</CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <TextBlock TextWrapping="Wrap"  FontSize="20" RenderTransformOrigin="0.497,0.881">Акушерские факторы риска</TextBlock>
+                <CheckBox Name="factorTwoOne" FontSize="15" Checked="factorTwoOne_Checked">Преэклампсия во время текущей беременности</CheckBox>
+                <CheckBox Name="factroTwoTwo" FontSize="15" Checked="factroTwoTwo_Checked">ВРТ/ЭКО (только антенатально)</CheckBox>
+                <CheckBox Name="factorTwoThree" FontSize="15" Checked="factorTwoThree_Checked">Многоплодная беременность</CheckBox>
+                <CheckBox Name="factorTwoFour" FontSize="15" Checked="factorTwoFour_Checked">Кесарево сечение в родах</CheckBox>
+                <CheckBox Name="factorTwoFive" FontSize="15" Checked="factorTwoFive_Checked">Плановое кесарево сечение</CheckBox>
+                <CheckBox Name="factorTwoSix" FontSize="15" Checked="factorTwoSix_Checked">Вагинальное оперативное родоразрешение, в т.ч. с применением ротационных
+акушерских щипцов</CheckBox>
+                <CheckBox Name="factorTwoSeven" FontSize="15" Checked="factorTwoSeven_Checked">Продолжительные роды (>24 часов)</CheckBox>
+                <CheckBox Name="factorTwoEight" FontSize="15" Checked="factorTwoEight_Checked">Послеродовое кровотечение (>1 литра или переливание крови)</CheckBox>
+                <CheckBox Name="factorTwoNine" FontSize="15" Checked="factorTwoNine_Checked">Преждевременные роды меньше 37 недели при данной беременности</CheckBox>
+                <CheckBox Name="factorTwoTen" FontSize="15" Checked="factorTwoTen_Checked">Мертворождение в настоящую беременность</CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="3">
+                <TextBlock TextWrapping="Wrap" FontSize="20">Преходящие факторы риска</TextBlock>
+                <CheckBox Name="factorThreeOne" FontSize="15" Checked="factorThreeOne_Checked">Любая хирургическая процедура во время беременности или послеродового периода</CheckBox>
+                <CheckBox Name="factorThreeTwo" FontSize="15" Checked="factorThreeTwo_Checked">Неукротимая рвота</CheckBox>
+                <CheckBox Name="factorThreeThree" FontSize="15" Checked="factorThreeThree_Checked">Синдром гиперстимуляции яичников (только первый триместр)</CheckBox>
+                <CheckBox Name="factorThreeFour" FontSize="15" Checked="factorThreeFour_Checked">Системная инфекция в настоящее время</CheckBox>
+                <CheckBox Name="factorThreeFive" FontSize="15" Checked="factorThreeFive_Checked">Ограничение подвижности, обезвоживание</CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="4">
+                <Label FontSize="20">Масса тела и рост:</Label>
+                <StackPanel  Orientation="Horizontal">
+                    <Label FontSize="15">Вес</Label>
+                    <TextBox Margin="50,0,0,0" Name="weight" FontSize="15" Opacity="0.25">0</TextBox>
+                    <Label FontSize="15" Margin="10,0,0,0">кг.</Label>
+                    <Label FontSize="15" Margin="50,0,0,0">Рост</Label>
+                    <TextBox Name="height" FontSize="15" Opacity="0.25" Margin="10,0,0,0">0</TextBox>
+                    <Label FontSize="15" Margin="10,0,0,0">см.</Label>
+                    <Label FontSize="15" Margin="50,0,0,0">ИМТ =</Label>
+                    <TextBox Name="imt" FontSize="15" Margin="10,0,0,0"></TextBox>
+                    <Label FontSize="15" Margin="10,0,0,0">кг.м^2</Label>
+                    <Button Name="calculate" FontSize="15" Margin="50,0,0,0" Click="calculate_Click">Расчитать</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="4">
+                    <Label FontSize="20">Результат расчёта факторов риска ВТЭО:</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <Label FontSize="15">Баллы риска:</Label>
+                        <TextBox Name="point" FontSize="15" Margin="10,0,0,0" TextChanged="TextBox_TextChanged"></TextBox>
+                        <Label Margin="10,0,0,0" FontSize="15">балл(а)</Label>
+                        </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label FontSize="15">Группа риска:</Label>
+                        <TextBox Name="group" FontSize="15" Margin="10,0,0,0" TextChanged="TextBox_TextChanged_1"></TextBox>
+                    </StackPanel>
+                    <Label FontSize="15">Назначения:</Label>
+                    <TextBox Name="recOne" FontSize="15" TextChanged="TextChanged"></TextBox>
+                    <TextBox Name="recTwo" FontSize="15" TextChanged="TextChanged"></TextBox>
+                    <TextBox Name="recThree" FontSize="15" TextChanged="TextChanged"></TextBox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
+
